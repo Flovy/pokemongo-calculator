@@ -1,0 +1,51 @@
+<div class="iv-calculator">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>
+                IV Calculator
+            </h1>
+
+        </div>
+    </div>
+    <div class="row">
+        <form class="form-inline col-xs-12">
+            <div class="form-group">
+                <label for="pokemon-name" class="control-label">Pokémon</label>
+                <div class="">
+                    <input id="pokemon-name" name="pokemon-name" type="text" class="form-control" ng-model="ctrl.pokemonName" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="cp" class="control-label">CP</label>
+                <div class="">
+                    <input id="cp" name="cp" type="number" class="form-control" ng-model="ctrl.cp" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="hp" class="control-label">HP</label>
+                <div class="">
+                    <input id="hp" name="hp" type="number" class="form-control" ng-model="ctrl.hp" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="dust" class="control-label">Dust</label>
+                <div class="">
+                    <input id="dust" name="dust" type="number" class="form-control" ng-model="ctrl.dust" />
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <button type="button" class="btn btn-success col-xs-12" ng-click="ctrl.calculate()">Calculate</button>
+        </div>
+        <div class="col-md-2">
+            <button type="button" class="btn btn-danger col-xs-12" ng-click="">Reset</button>
+        </div>
+    </div>
+    <div class="row calculation-result" ng-if="ctrl.possibleIVs">
+        <pre>
+{{ctrl.possibleIVs | json}}
+        </pre>
+    </div>
+</div>
